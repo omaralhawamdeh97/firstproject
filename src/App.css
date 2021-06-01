@@ -2,8 +2,15 @@
   text-align: center;
 }
 
-.myPic {
+.my-pic {
   display: flex;
   width: 1350px;
   height: 500px;
+}
+
+.menu-items {
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  justify-content: space-around;
 }
