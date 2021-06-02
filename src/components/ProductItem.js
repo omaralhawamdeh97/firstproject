@@ -1,4 +1,4 @@
-import "../App.css"; //styling
+// import "../App.css"; //styling
 
 const ProductItem = (props) => {
   return (
