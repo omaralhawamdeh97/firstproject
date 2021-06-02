@@ -3,7 +3,7 @@ import "../App.css"; // styling
 const Home = () => {
   return (
     <div>
-      <h1 className="hello">Coffe House</h1>
+      <h1 className="hello">Coffee House</h1>
       <h4 className="hello">Coffe is our passion</h4>
       <img
         className="my-pic"
