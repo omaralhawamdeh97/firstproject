@@ -1,16 +1,23 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const theme = {
+  light: {
+    mainColor: "#244621", // main font color
+    backgroundColor: "#fefafb", // main background color
+    white: "#ffffff",
+  },
 
-  light :
-  {mainColor: "#244621", // main font color
-  backgroundColor: "#fefafb", // main background color
-  white: "#ffffff"},
+  dark: {
+    mainColor: "#fefafb", // main font color
+    backgroundColor: "#244621", // main background color
+    white: "#ffffff",
+  },
 
-  dark : 
-  {mainColor: "#fefafb", // main font color
-  backgroundColor: "#244621", // main background color
-  white: "#ffffff"},
+  grey: {
+    mainColor: "#328975", // main font color
+    backgroundColor: "#876933", // main background color
+    white: "#ffffff",
+  },
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -35,7 +42,6 @@ export const ShopImage = styled.img`
   margin-bottom: 20px;
   justify-content: space-around;
   align-self: center;
-  
 `;
 
 export const MenuItems = styled.div`
@@ -44,14 +50,13 @@ export const MenuItems = styled.div`
   text-align: center;
   justify-content: space-around;
   color: ${(props) => props.theme.white};
-
 `;
 
 export const ThemeButton = styled.button`
-font-size: 1em;
-margin: 1.25em;
-padding: 0.25em 1em;
-border-radius: 3px;
-background-color: ${(props) => props.theme.mainColor};
-color: ${(props) => props.theme.backgroundColor};
+  font-size: 1em;
+  margin: 1.25em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.backgroundColor};
 `;
