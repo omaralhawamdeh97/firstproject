@@ -1,18 +1,25 @@
 //components
 import Home from "./components/Home";
 import ProductList from "./components/ProductsList";
-import { GlobalStyle } from "./styles";
+import { GlobalStyle, ThemeButton } from "./styles";
 import { ThemeProvider } from "styled-components";
+import {theme} from "./styles"
+import { useState } from "react";
 
-const theme = {
-  mainColor: "#244621", // main font color
-  backgroundColor: "#fefafb", // main background color
-  white: "#ffffff",
-};
+
+
 function App() {
+  const [currentTheme, setCurrentTheme] = useState("light");
+  const ToggleCurrentTheme = () => {
+    if (currentTheme === "light") 
+     setCurrentTheme("dark")
+    else 
+     setCurrentTheme("light")
+  }
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
+      <ThemeButton onClick={ToggleCurrentTheme}>Switch theme</ThemeButton>
       <Home />
       <ProductList />
     </ThemeProvider>
