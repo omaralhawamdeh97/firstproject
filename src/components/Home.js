@@ -3,7 +3,13 @@ import { Descreption, ShopImage, Title } from "../styles";
 
 const Home = () => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Title> Coffee House</Title>
       <Descreption> Coffe is our passion</Descreption>
       <ShopImage

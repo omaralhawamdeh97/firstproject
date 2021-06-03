@@ -7,15 +7,15 @@ export const theme = {
     white: "#ffffff",
   },
 
-  dark: {
+  green: {
     mainColor: "#fefafb", // main font color
     backgroundColor: "#244621", // main background color
     white: "#ffffff",
   },
 
   grey: {
-    mainColor: "#328975", // main font color
-    backgroundColor: "#876933", // main background color
+    mainColor: "white", // main font color
+    backgroundColor: "#393e46", // main background color
     white: "#ffffff",
   },
 };
@@ -40,8 +40,7 @@ export const ShopImage = styled.img`
   width: 1350px;
   height: 500px;
   margin-bottom: 20px;
-  justify-content: space-around;
-  align-self: center;
+  border-radius: 15px;
 `;
 
 export const MenuItems = styled.div`
@@ -49,6 +48,7 @@ export const MenuItems = styled.div`
   padding: 10px;
   text-align: center;
   justify-content: space-around;
+
   color: ${(props) => props.theme.white};
 `;
 
@@ -56,7 +56,15 @@ export const ThemeButton = styled.button`
   font-size: 1em;
   margin: 1.25em;
   padding: 0.25em 1em;
-  border-radius: 3px;
+  height: 80px;
+  width: 120px;
+  border-radius: 20px;
   background-color: ${(props) => props.theme.mainColor};
   color: ${(props) => props.theme.backgroundColor};
+`;
+
+export const ProductStyle = styled.img`
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
 `;

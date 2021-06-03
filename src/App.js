@@ -10,13 +10,17 @@ function App() {
   const local = localStorage.getItem("current");
 
   const [currentTheme, setCurrentTheme] = useState(
-    local === "dark" ? "dark" : "light"
+    local === "green" ? "green" : local === "light" ? "light" : "grey"
   );
   const ToggleCurrentTheme = () => {
     if (currentTheme === "light") {
-      localStorage.setItem("current", "dark");
-      setCurrentTheme("dark");
-    } else {
+      localStorage.setItem("current", "green");
+      setCurrentTheme("green");
+    }
+    if (currentTheme === "green") {
+      localStorage.setItem("current", "grey");
+      setCurrentTheme("grey");
+    } else if (currentTheme === "grey") {
       localStorage.setItem("current", "light");
       setCurrentTheme("light");
     }
@@ -26,7 +30,11 @@ function App() {
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
       <ThemeButton onClick={ToggleCurrentTheme}>
-        {currentTheme === "dark" ? "Light" : "Dark"}
+        {currentTheme === "light"
+          ? "green"
+          : currentTheme === "green"
+          ? "grey"
+          : "light"}
       </ThemeButton>
       <Home />
       <ProductList />
