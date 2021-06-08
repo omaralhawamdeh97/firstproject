@@ -69,10 +69,18 @@ export const ThemeButton = styled.button`
   cursor: pointer;
 `;
 
-export const ProductStyle = styled.img`
+export const ImgStyle = styled.img`
   height: 300px;
   width: 300px;
   border-radius: 15px;
+  cursor: pointer;
+`;
+
+export const DetailedImgStyle = styled.img`
+  height: 500px;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
 `;
 
 export const SearchBarStyled = styled.input`
@@ -80,4 +88,15 @@ export const SearchBarStyled = styled.input`
   margin: 1rem auto;
   display: block;
   width: 40%;
+`;
+
+export const Detalis = styled.div`
+  padding: 20px;
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.backgroundColor};
 `;

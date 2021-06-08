@@ -5,17 +5,20 @@ import { MenuItems } from "../styles";
 import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
 
-const ProductList = () => {
+const ProductList = (props) => {
   const [Query, setQuery] = useState("");
-  // const newArray = products.map((product) => (
-  //   <ProductItem product={product} key={product.id} />
-  // ));
-  const filteredList = products
+
+  let filteredList = products
     .filter((product) => product.name.includes(Query))
-    .map((product) => <ProductItem product={product} key={product.id} />);
+    .map((product) => (
+      <ProductItem
+        product={product}
+        key={product.id}
+        setCurrentProduct={props.setCurrentProduct}
+      />
+    ));
   return (
     <>
-      {/* <MenuItems> {newArray}</MenuItems> */}
       <SearchBar setQuery={setQuery} />
       <MenuItems>{filteredList}</MenuItems>
     </>

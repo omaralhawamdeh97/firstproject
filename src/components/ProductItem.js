@@ -1,11 +1,15 @@
 // import "../App.css"; //styling
 
-import { ProductStyle } from "../styles";
+import { ImgStyle } from "../styles";
 
 const ProductItem = (props) => {
   return (
     <div>
-      <ProductStyle src={props.product.imageURL} alt="coffe" />
+      <ImgStyle
+        onClick={() => props.setCurrentProduct(props.product)}
+        src={props.product.imageURL}
+        alt="coffe"
+      />
       <p>{props.product.name}</p>
       <p>{props.product.price} JD</p>
     </div>

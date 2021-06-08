@@ -5,8 +5,10 @@ import { GlobalStyle, ThemeButton } from "./styles";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles";
 import { useState } from "react";
+import ProductDetalis from "./components/ProductDetalis";
 
 function App() {
+  const [currentProduct, setCurrentProduct] = useState(null);
   const local = localStorage.getItem("current");
 
   const [currentTheme, setCurrentTheme] = useState(
@@ -25,7 +27,6 @@ function App() {
       setCurrentTheme("light");
     }
   };
-  console.log(local, "local");
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
@@ -38,8 +39,14 @@ function App() {
       </ThemeButton>
 
       <Home />
-
-      <ProductList />
+      {currentProduct ? (
+        <ProductDetalis
+          product={currentProduct}
+          setCurrentProduct={setCurrentProduct}
+        />
+      ) : (
+        <ProductList setCurrentProduct={setCurrentProduct} />
+      )}
     </ThemeProvider>
   );
 }
