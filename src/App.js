@@ -36,7 +36,9 @@ function App() {
           ? "grey"
           : "light"}
       </ThemeButton>
+
       <Home />
+
       <ProductList />
     </ThemeProvider>
   );

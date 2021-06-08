@@ -26,6 +26,11 @@ body {
     color : ${(props) => props.theme.mainColor};
 }
 `;
+export const homeDiv = styled.div`
+  display: "flex";
+  flex-direction: "column";
+  align-items: "center";
+`;
 
 export const Title = styled.h1`
   text-align: center;
@@ -49,22 +54,30 @@ export const MenuItems = styled.div`
   text-align: center;
   justify-content: space-around;
 
-  color: ${(props) => props.theme.white};
+  color: ${(props) => props.theme.mainColor};
 `;
 
 export const ThemeButton = styled.button`
   font-size: 1em;
   margin: 1.25em;
   padding: 0.25em 1em;
-  height: 80px;
-  width: 120px;
+  height: 55px;
+  width: 100px;
   border-radius: 20px;
   background-color: ${(props) => props.theme.mainColor};
   color: ${(props) => props.theme.backgroundColor};
+  cursor: pointer;
 `;
 
 export const ProductStyle = styled.img`
   height: 300px;
   width: 300px;
   border-radius: 15px;
+`;
+
+export const SearchBarStyled = styled.input`
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 40%;
 `;
