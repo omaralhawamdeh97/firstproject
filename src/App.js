@@ -6,9 +6,13 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./styles";
 import { useState } from "react";
 import ProductDetalis from "./components/ProductDetalis";
+import products from "./products";
 
 function App() {
   const [currentProduct, setCurrentProduct] = useState(null);
+
+  const [_product, setProduct] = useState(products);
+
   const local = localStorage.getItem("current");
 
   const [currentTheme, setCurrentTheme] = useState(
@@ -27,6 +31,12 @@ function App() {
       setCurrentTheme("light");
     }
   };
+
+  const deleteProduct = (productID) => {
+    let newProducts = products.filter((product) => product.id !== productID);
+    setProduct(newProducts);
+  };
+
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
@@ -43,9 +53,14 @@ function App() {
         <ProductDetalis
           product={currentProduct}
           setCurrentProduct={setCurrentProduct}
+          deleteProduct={deleteProduct}
         />
       ) : (
-        <ProductList setCurrentProduct={setCurrentProduct} />
+        <ProductList
+          products={_product}
+          setCurrentProduct={setCurrentProduct}
+          deleteProduct={deleteProduct}
+        />
       )}
     </ThemeProvider>
   );

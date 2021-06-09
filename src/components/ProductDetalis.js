@@ -1,4 +1,5 @@
 import { Detalis, DetailedImgStyle, ThemeButton } from "../styles";
+import DeleteButton from "./Buttons/DeleteButton";
 
 const ProductDetalis = (props) => {
   return (
@@ -10,6 +11,8 @@ const ProductDetalis = (props) => {
       <ThemeButton onClick={() => props.setCurrentProduct(null)}>
         Back
       </ThemeButton>
+
+      <DeleteButton onClick={() => props.deleteProduct(props.productID)} />
     </Detalis>
   );
 };

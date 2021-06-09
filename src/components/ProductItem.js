@@ -1,6 +1,7 @@
 // import "../App.css"; //styling
 
 import { ImgStyle } from "../styles";
+import DeleteButton from "./Buttons/DeleteButton";
 
 const ProductItem = (props) => {
   return (
@@ -12,6 +13,7 @@ const ProductItem = (props) => {
       />
       <p>{props.product.name}</p>
       <p>{props.product.price} JD</p>
+      <DeleteButton onClick={() => props.deleteProduct(props.product.id)} />
     </div>
   );
 };
